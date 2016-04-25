@@ -42,20 +42,17 @@ export default class NeedsTeam extends React.Component {
         this.onChanged = this.onChanged.bind(this);
 
         this.state = {
-            profiles: UserStore.getProfiles(),
             team: TeamStore.getCurrent()
         };
     }
 
     onChanged() {
         this.setState({
-            profiles: UserStore.getProfiles(),
             team: TeamStore.getCurrent()
         });
     }
 
     componentWillMount() {
-        UserStore.addChangeListener(this.onChanged);
         TeamStore.addChangeListener(this.onChanged);
 
         // Emit view action
@@ -81,7 +78,6 @@ export default class NeedsTeam extends React.Component {
     }
 
     componentWillUnmount() {
-        UserStore.removeChangeListener(this.onChanged);
         TeamStore.removeChangeListener(this.onChanged);
         $(window).off('focus');
         $(window).off('blur');
@@ -111,7 +107,6 @@ export default class NeedsTeam extends React.Component {
                     <div className='row main'>
                         {React.cloneElement(this.props.center, {
                             user: this.props.user,
-                            profiles: this.state.profiles,
                             team: this.state.team
                         })}
                     </div>
