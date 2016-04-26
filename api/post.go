@@ -691,7 +691,7 @@ func sendNotifications(c *Context, post *model.Post, team *model.Team, channel *
 					alreadySeen := make(map[string]string)
 
 					for _, session := range sessions {
-						if len(session.DeviceId) > 0 && alreadySeen[session.DeviceId] == "" &&
+						if len(session.DeviceId) > 0 &&
 							(strings.HasPrefix(session.DeviceId, model.PUSH_NOTIFY_APPLE+":") || strings.HasPrefix(session.DeviceId, model.PUSH_NOTIFY_ANDROID+":")) {
 							alreadySeen[session.DeviceId] = session.DeviceId
 
