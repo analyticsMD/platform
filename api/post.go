@@ -553,7 +553,7 @@ func sendNotifications(c *Context, post *model.Post, team *model.Team, channel *
 				if _, ok := profileMap[userId].NotifyProps["email"]; ok && profileMap[userId].NotifyProps["email"] == "false" {
 					sendEmail = false
 				}
-				if sendEmail && (profileMap[userId].IsAway() || profileMap[userId].IsOffline()) {
+				if sendEmail {
 					toEmailMap[userId] = true
 				} else {
 					toEmailMap[userId] = false
@@ -668,7 +668,7 @@ func sendNotifications(c *Context, post *model.Post, team *model.Team, channel *
 						l4g.Warn(utils.T("api.post.send_notifications_and_forget.push_notification.mhpnsWarn"))
 					} else {
 						for _, session := range sessions {
-							if len(session.DeviceId) > 0 &&
+							if len(session.DeviceId) > 0 && alreadySeen[session.DeviceId] == "" &&
 								(strings.HasPrefix(session.DeviceId, model.PUSH_NOTIFY_APPLE+":") || strings.HasPrefix(session.DeviceId, model.PUSH_NOTIFY_ANDROID+":")) {
 								alreadySeen[session.DeviceId] = session.DeviceId
 
