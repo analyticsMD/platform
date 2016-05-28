@@ -904,7 +904,7 @@ func addMember(c *Context, w http.ResponseWriter, r *http.Request) {
 
 			c.LogAudit("name=" + channel.Name + " user_id=" + userId)
 
-			go PostUserAddRemoveMessage(c, channel.Id, fmt.Sprintf(utils.T("api.channel.add_member.added"), nUser.Username, oUser.Username))
+			//go PostUserAddRemoveMessage(c, channel.Id, fmt.Sprintf(utils.T("api.channel.add_member.added"), nUser.Username, oUser.Username))
 
 			<-Srv.Store.Channel().UpdateLastViewedAt(id, oUser.Id)
 			w.Write([]byte(cm.ToJson()))
