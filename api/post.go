@@ -473,6 +473,11 @@ func sendNotifications(c *Context, post *model.Post, team *model.Team, channel *
 		l4g.Error(utils.T("api.post.send_notifications_and_forget.user_id.error"), post.UserId)
 		return
 	}
+	// Create a map for channel members.
+	channelMemberMap := make(map[string]model.ChannelMember)
+	for _, member := range members {
+		channelMemberMap[member.UserId] = member
+	}
 
 	mentionedUserIds := make(map[string]bool)
 	alwaysNotifyUserIds := []string{}
@@ -611,11 +616,37 @@ func sendNotifications(c *Context, post *model.Post, team *model.Team, channel *
 	if sendPushNotifications {
 		for _, id := range mentionedUsersList {
 			if profileMap[id].NotifyProps["push"] != "none" {
+				// Filter if channel is ignored.
+				predicate := "none"
+				globalSetting := profileMap[id].NotifyProps["push"]
+				channelSetting := channelMemberMap[id].NotifyProps["desktop"]
+				if channelSetting == "default" {
+					predicate = globalSetting
+				} else {
+					predicate = channelSetting
+				}
+				if predicate == "none" {
+					l4g.Debug("Skipping member for push notif " + id)
+					continue
+				}
 				sendPushNotification(post, profileMap[id], channel, senderName, true)
 			}
 		}
 		for _, id := range alwaysNotifyUserIds {
 			if _, ok := mentionedUserIds[id]; !ok {
+				// Filter if channel ignored, or only mentions allowed.
+				globalSetting := profileMap[id].NotifyProps["push"]
+				channelSetting := channelMemberMap[id].NotifyProps["desktop"]
+				predicate := "none"
+				if channelSetting == "default" {
+					predicate = globalSetting
+				} else {
+					predicate = channelSetting
+				}
+				if predicate != "all" {
+					l4g.Debug("Skipping member for push notif " + id)
+					continue
+				}
 				sendPushNotification(post, profileMap[id], channel, senderName, false)
 			}
 		}
