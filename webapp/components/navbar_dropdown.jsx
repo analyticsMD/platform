@@ -325,7 +325,7 @@ export default class NavbarDropdown extends React.Component {
                             >
                                 <FormattedMessage
                                     id='navbar_dropdown.about'
-                                    defaultMessage='About Mattermost'
+                                    defaultMessage='About Last Mile'
                                 />
                             </a>
                         </li>

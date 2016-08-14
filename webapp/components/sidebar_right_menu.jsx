@@ -278,7 +278,7 @@ export default class SidebarRightMenu extends React.Component {
                                 <i className='fa fa-info'></i>
                                 <FormattedMessage
                                     id='navbar_dropdown.about'
-                                    defaultMessage='About Mattermost'
+                                    defaultMessage='About Last Mile'
                                 />
                             </a>
                         </li>

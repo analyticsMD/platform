@@ -13,7 +13,7 @@ import wordIcon from 'images/icons/word.png';
 import patchIcon from 'images/icons/patch.png';
 import genericIcon from 'images/icons/generic.png';
 
-import logoImage from 'images/logo_compact.png';
+import logoImage from 'images/logo_compact_analyticsmd.png';
 import logoWebhook from 'images/webhook_icon.jpg';
 
 import solarizedDarkCSS from '!!file?name=files/code_themes/[hash].[ext]!highlight.js/styles/solarized-dark.css';
@@ -273,27 +273,27 @@ export default {
     UPDATE_TYPING_MS: 5000,
     THEMES: {
         default: {
-            type: 'Organization',
-            sidebarBg: '#2071a7',
-            sidebarText: '#fff',
-            sidebarUnreadText: '#fff',
-            sidebarTextHoverBg: '#136197',
-            sidebarTextActiveBorder: '#7AB0D6',
-            sidebarTextActiveColor: '#FFFFFF',
-            sidebarHeaderBg: '#2f81b7',
-            sidebarHeaderTextColor: '#FFFFFF',
-            onlineIndicator: '#7DBE00',
-            awayIndicator: '#DCBD4E',
-            mentionBj: '#FBFBFB',
-            mentionColor: '#2071A7',
-            centerChannelBg: '#f2f4f8',
-            centerChannelColor: '#333333',
-            newMessageSeparator: '#FF8800',
-            linkColor: '#2f81b7',
-            buttonBg: '#1dacfc',
-            buttonColor: '#FFFFFF',
-            mentionHighlightBg: '#fff2bb',
-            mentionHighlightLink: '#2f81b7',
+            type: 'analyticsMD',
+            sidebarBg: '#b8b0b0',
+            sidebarText: '#000000',
+            sidebarUnreadText: '#ffffff',
+            sidebarTextHoverBg: '#ebe2e2',
+            sidebarTextActiveBorder: '#424040',
+            sidebarTextActiveColor: '#ffffff',
+            sidebarHeaderBg: '#786f6f',
+            sidebarHeaderTextColor: '#ffffff',
+            onlineIndicator: '#af192b',
+            awayIndicator: '#e8bfc6',
+            mentionBj: '#c90808',
+            mentionColor: '#ffffff',
+            centerChannelBg: '#ffffff',
+            centerChannelColor: '#757575',
+            newMessageSeparator: '#cc992d',
+            linkColor: '#3c86bd',
+            buttonBg: '#3c86bd',
+            buttonColor: '#ffffff',
+            mentionHighlightBg: '#ffffff',
+            mentionHighlightLink: '#3c86bd',
             codeTheme: 'github',
             image: defaultThemeImage
         },

@@ -41,14 +41,14 @@ export default class AboutBuildModal extends React.Component {
             <div>
                 <FormattedMessage
                     id='about.teamEditionLearn'
-                    defaultMessage='Join the Mattermost community at '
+                    defaultMessage='Visit us at '
                 />
                 <a
                     target='_blank'
                     rel='noopener noreferrer'
-                    href='http://www.mattermost.org/'
+                    href='https://www.analyticsmd.com/'
                 >
-                    {'mattermost.org'}
+                    {'analyticsmd.com'}
                 </a>
             </div>
         );
@@ -78,9 +78,9 @@ export default class AboutBuildModal extends React.Component {
                     <a
                         target='_blank'
                         rel='noopener noreferrer'
-                        href='http://about.mattermost.com/'
+                        href='https://www.analyticsmd.com/'
                     >
-                        {'about.mattermost.com'}
+                        {'analyticsmd.com'}
                     </a>
                 </div>
             );
@@ -114,20 +114,14 @@ export default class AboutBuildModal extends React.Component {
                     <Modal.Title>
                         <FormattedMessage
                             id='about.title'
-                            defaultMessage='About Mattermost'
+                            defaultMessage='About Last Mile'
                         />
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className='about-modal__content'>
-                        <div className='about-modal__logo'>
-                            <span
-                                className='icon'
-                                dangerouslySetInnerHTML={{__html: mattermostLogo}}
-                            />
-                        </div>
                         <div>
-                            <h3 className='about-modal__title'>{'Mattermost'} {title}</h3>
+                            <h3 className='about-modal__title'>{'Last Mile'} {title}</h3>
                             <p className='about-modal__subtitle padding-bottom'>{subTitle}</p>
                             <div className='form-group less'>
                                 <div>
@@ -146,7 +140,7 @@ export default class AboutBuildModal extends React.Component {
                         <div className='form-group about-modal__copyright'>
                             <FormattedMessage
                                 id='about.copyright'
-                                defaultMessage='Copyright 2016 Mattermost, Inc. All rights reserved'
+                                defaultMessage='Copyright 2016 analyticsMD, Inc. All rights reserved'
                             />
                         </div>
                     </div>
