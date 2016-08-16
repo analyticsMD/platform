@@ -201,10 +201,11 @@ export default class Post extends React.Component {
 
         if (Utils.isSystemMessage(post)) {
             profilePic = (
-                <span
-                    className='icon'
-                    dangerouslySetInnerHTML={{__html: mattermostLogo}}
-                />
+             <img
+                src={Constants.SYSTEM_MESSAGE_PROFILE_IMAGE}
+                height='36'
+                width='36'
+             />
             );
         }
 
