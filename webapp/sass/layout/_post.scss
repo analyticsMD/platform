@@ -760,7 +760,7 @@ body.ios {
         display: inline-block;
         margin-right: 5px;
         top: -1px;
-        visibility: hidden;
+        visibility: visible;
 
         .dropdown-menu {
             left: auto;
@@ -959,7 +959,7 @@ body.ios {
     .comment-icon__container {
         display: inline-block;
         fill: $primary-color;
-        visibility: hidden;
+        visibility: visible;
 
         &:focus {
             outline: none;
@@ -970,8 +970,8 @@ body.ios {
         }
 
         svg {
-            height: 17px;
-            width: 17px;
+            height: 19px;
+            width: 19px;
         }
 
         .comment-icon {

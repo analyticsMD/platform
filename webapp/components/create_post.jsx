@@ -466,37 +466,7 @@ class CreatePost extends React.Component {
                 onSubmit={this.handleSubmit}
             >
                 <div className='post-create'>
-                    <div className='post-create-body'>
-                        <div className='post-body__cell'>
-                            <Textbox
-                                onUserInput={this.handleUserInput}
-                                onKeyPress={this.postMsgKeyPress}
-                                onKeyDown={this.handleKeyDown}
-                                messageText={this.state.messageText}
-                                createMessage={this.props.intl.formatMessage(holders.write)}
-                                channelId={this.state.channelId}
-                                id='post_textbox'
-                                ref='textbox'
-                            />
-                            <FileUpload
-                                ref='fileUpload'
-                                getFileCount={this.getFileCount}
-                                onClick={this.handleUploadClick}
-                                onUploadStart={this.handleUploadStart}
-                                onFileUpload={this.handleFileUploadComplete}
-                                onUploadError={this.handleUploadError}
-                                postType='post'
-                                channelId=''
-                            />
-                        </div>
-                        <a
-                            className='send-button theme'
-                            onClick={this.handleSubmit}
-                        >
-                            <i className='fa fa-paper-plane'/>
-                        </a>
-                        {tutorialTip}
-                    </div>
+
                     <div className={postFooterClassName}>
                         <MsgTyping
                             channelId={this.state.channelId}
